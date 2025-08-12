@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
-  <title>Gabriel Crescêncio | Assessoria</title>
+  <title>Gabriel Crescêncio | Assessoria Náutica</title>
   
   <!-- Meta Tags SEO -->
-  <meta name="description" content="Náutica Amigos - Cursos de habilitação náutica e serviços de despachante náutico premium. Formamos condutores seguros e regularizamos sua documentação.">
-  <meta property="og:title" content="Náutica Amigos | Cursos e Despachante Náutico Premium">
+  <meta name="description" content="Gabriel Crescêncio - Cursos de habilitação náutica e serviços de despachante náutico premium. Formamos condutores seguros e regularizamos sua documentação.">
+  <meta property="og:title" content="Gabriel Crescêncio | Cursos e Despachante Náutico Premium">
   <meta property="og:description" content="Tire sua habilitação náutica com excelência e regularize sua documentação com nossos serviços especializados.">
-  <meta property="og:image" content="https://www.nauticaamigos.com.br/share-image.jpg">
-  <meta property="og:url" content="https://www.nauticaamigos.com.br">
+  <meta property="og:image" content="https://www.gabrielcrescencio.com.br/share-image.jpg">
+  <meta property="og:url" content="https://www.gabrielcrescencio.com.br">
   <meta name="twitter:card" content="summary_large_image">
   
   <!-- Favicon -->
@@ -22,7 +22,7 @@
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -32,13 +32,28 @@
         extend: {
           colors: {
             navy: '#001F3F',
+            navyLight: '#0A2B50',
+            navyDark: '#00152D',
             gold: '#D4AF37',
+            goldLight: '#E8C766',
+            goldDark: '#C19C2E',
             seafoam: '#7FDBFF',
+            seafoamDark: '#5BC7F0',
           },
           fontFamily: {
             sans: ['Montserrat', 'sans-serif'],
             serif: ['Playfair Display', 'serif'],
           },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
         }
       }
     }
@@ -47,21 +62,103 @@
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   
-  <!-- Estilos Responsivos -->
+  <!-- Estilos Personalizados -->
   <style>
     html {
+      scroll-behavior: smooth;
       font-size: 16px;
     }
+    
     @media (max-width: 768px) {
       html {
         font-size: 14px;
       }
     }
+    
     @media (max-width: 480px) {
       html {
         font-size: 13px;
       }
     }
+    
+    /* Efeito de hover suave para todos os links */
+    a {
+      transition: all 0.3s ease;
+    }
+    
+    /* Botões com efeito 3D */
+    .btn-3d {
+      box-shadow: 0 4px 0 0 rgba(0, 31, 63, 0.2);
+      transition: all 0.2s ease;
+    }
+    
+    .btn-3d:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 0 rgba(0, 31, 63, 0.2);
+    }
+    
+    .btn-3d:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 0 rgba(0, 31, 63, 0.2);
+    }
+    
+    /* Cards com efeito de elevação */
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Gradiente animado para o hero */
+    .hero-gradient {
+      background: linear-gradient(135deg, #001F3F 0%, #003366 50%, #001F3F 100%);
+      background-size: 200% 200%;
+      animation: gradientBG 15s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Efeito de onda suave */
+    .wave-shape {
+      animation: wave 12s linear infinite;
+    }
+    
+    @keyframes wave {
+      0% { transform: translateX(0) translateZ(0) scaleY(1); }
+      50% { transform: translateX(-25%) translateZ(0) scaleY(0.95); }
+      100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+    }
+    
+    /* Efeito de brilho em elementos dourados */
+    .gold-glow {
+      position: relative;
+    }
+    
+    .gold-glow::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .gold-glow:hover::after {
+      opacity: 1;
+    }
+    
+    /* Responsividade adicional */
     @media (max-width: 360px) {
       .text-xs-extra {
         font-size: 0.75rem;
@@ -77,38 +174,54 @@
     }
   </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800 font-sans antialiased">
 
   <!-- Hero Section -->
-  <header class="relative h-auto min-h-[90vh] md:min-h-[800px] overflow-hidden">
-    <div class="absolute inset-0">
-      
-      <div class="absolute inset-0 bg-navy/70"></div>
+  <header class="relative h-auto min-h-[90vh] md:min-h-[800px] overflow-hidden hero-gradient">
+    <div class="absolute inset-0 opacity-20">
+      <!-- Padrão de ondas sutis -->
+      <svg class="absolute bottom-0 left-0 w-full h-1/3 opacity-30" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#F8FAFC"></path>
+      </svg>
     </div>
     
     <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 py-24 md:py-0">
-      <div class="mb-6 md:mb-8 w-full px-4" data-aos="fade-down">
-        <img src="./gabriel-crescencio-logo.png" alt="Logo" 
-             class="mx-auto w-36 sm:w-44 md:w-56 h-auto"
+      <div class="mb-6 md:mb-8 w-full px-4" data-aos="fade-down" data-aos-delay="100">
+        <img src="./logo-transparente2.png" alt="Logo Gabriel Crescêncio" 
+             class="mx-auto w-36 sm:w-44 md:w-56 h-auto gold-glow"
              style="max-width: 240px;">
       </div>
       
-      <div class="max-w-4xl mx-auto w-full px-4" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto w-full px-4" data-aos="fade-up" data-aos-delay="200">
         <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6 leading-snug sm:leading-tight">
-          Tire sua Habilitação Náutica com Excelência.
+          <span class="inline-block">Tire sua Habilitação Náutica</span>
+          <span class="block text-gold mt-2">com Excelência e Segurança</span>
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl text-blue-100 mb-6 sm:mb-8 mx-auto max-w-xs sm:max-w-md md:max-w-2xl">
-          Cursos práticos e teóricos ministrados por especialistas
+          Cursos práticos e teóricos ministrados por especialistas com anos de experiência
         </p>
-        <a href="https://wa.me/5599999999999" target="_blank" 
-           class="inline-block bg-gold hover:bg-yellow-600 text-navy font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base">
-          Fale com um Especialista
-        </a>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://wa.me/5599999999999" target="_blank" 
+             class="btn-3d inline-block bg-gold hover:bg-goldLight text-navy font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg transition-all shadow-lg text-sm sm:text-base">
+            Fale com um Especialista
+          </a>
+          <a href="#cursos" 
+             class="btn-3d inline-block bg-transparent hover:bg-white/10 border-2 border-white text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg transition-all shadow-lg text-sm sm:text-base">
+            Conheça Nossos Cursos
+          </a>
+        </div>
+      </div>
+      
+      <!-- Elemento decorativo animado -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="500">
+        <svg class="h-8 w-8 text-white opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </div>
     
     <div class="absolute bottom-0 left-0 right-0 hidden sm:block">
-      <svg viewBox="0 0 1200 120" class="w-full h-16 md:h-24 lg:h-32">
+      <svg viewBox="0 0 1200 120" class="w-full h-16 md:h-24 lg:h-32 wave-shape">
         <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
               fill="#F8FAFC" fill-opacity="1"></path>
       </svg>
@@ -116,41 +229,51 @@
   </header>
 
   <!-- Sobre Nós -->
-  <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-white">
-    <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-      <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-        <div class="md:w-1/2">
-          <img src="./logo-gabriel.jpg" alt="Marina" class="rounded-lg sm:rounded-xl shadow-lg w-full h-auto object-cover" style="min-height: 300px;">
+  <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
+    <div class="max-w-6xl mx-auto" data-aos="fade-up">
+      <div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-12">
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <div class="relative group">
+            <img src="./logo-gabriel.jpg" alt="Gabriel Crescêncio" 
+                 class="rounded-xl shadow-xl w-full h-auto object-cover transform group-hover:scale-102 transition duration-500"
+                 style="min-height: 300px;">
+            <div class="absolute -inset-2 border-2 border-gold rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          </div>
         </div>
-        <div class="md:w-1/2 mt-6 md:mt-0">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mb-4 sm:mb-6 text-navy">Sobre a Nossa Assessoria</h2>
-          <p class="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-           Gabriel Crescêncio se consolidou como referência em educação náutica e serviços de despachante credenciado. Nossa equipe de instrutores altamente qualificados e experientes garante o melhor aprendizado para nossos alunos.
+        <div class="lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
+          <div class="inline-block bg-blue-50 text-navy px-4 py-2 rounded-full mb-4">
+            <span class="text-sm font-semibold">SOBRE NÓS</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6 text-navy leading-tight">
+            <span class="text-gold">Gabriel Crescêncio</span> - Referência em Educação Náutica
+          </h2>
+          <p class="text-base sm:text-lg leading-relaxed mb-6 text-gray-700">
+            Com anos de experiência no mercado náutico, Gabriel Crescêncio se consolidou como referência em educação náutica e serviços de despachante credenciado. Nossa equipe de instrutores altamente qualificados e experientes garante o melhor aprendizado para nossos alunos.
           </p>
-          <div class="space-y-3 sm:space-y-4">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 mt-1">
-                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="space-y-4 sm:space-y-5">
+            <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+              <div class="flex-shrink-0 mt-1 bg-gold p-2 rounded-full">
+                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p class="ml-3 text-sm sm:text-base text-gray-700">Infraestrutura moderna e equipamentos próprios</p>
+              <p class="ml-4 text-base sm:text-lg text-gray-700 font-medium">Infraestrutura moderna e equipamentos próprios para melhor aprendizado</p>
             </div>
-            <div class="flex items-start">
-              <div class="flex-shrink-0 mt-1">
-                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+              <div class="flex-shrink-0 mt-1 bg-gold p-2 rounded-full">
+                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p class="ml-3 text-sm sm:text-base text-gray-700">Taxa de aprovação de X% nos exames da Marinha</p>
+              <p class="ml-4 text-base sm:text-lg text-gray-700 font-medium">Alta taxa de aprovação nos exames da Marinha</p>
             </div>
-            <div class="flex items-start">
-              <div class="flex-shrink-0 mt-1">
-                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+              <div class="flex-shrink-0 mt-1 bg-gold p-2 rounded-full">
+                <svg class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p class="ml-3 text-sm sm:text-base text-gray-700">Atendimento personalizado e suporte completo</p>
+              <p class="ml-4 text-base sm:text-lg text-gray-700 font-medium">Atendimento personalizado e suporte completo durante todo o processo</p>
             </div>
           </div>
         </div>
@@ -159,387 +282,625 @@
   </section>
 
   <!-- Cursos -->
-  <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gray-50">
+  <section id="cursos" class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-10 sm:mb-16 px-2" data-aos="zoom-in" data-aos-duration="1000">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-navy mb-3 sm:mb-4">Nossos Cursos Náuticos</h2>
-        <p class="text-base sm:text-lg md:text-xl text-gray-600 mx-auto max-w-xs sm:max-w-md md:max-w-2xl">
-          Programas completos para formar condutores seguros
+      <div class="text-center mb-12 sm:mb-16 px-2" data-aos="zoom-in">
+        <div class="inline-block bg-blue-50 text-navy px-4 py-2 rounded-full mb-4">
+          <span class="text-sm font-semibold">NOSSOS CURSOS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-navy mb-4 leading-tight">
+          Formação Náutica <span class="text-gold">Completa</span>
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 mx-auto max-w-md md:max-w-2xl">
+          Programas completos para formar condutores seguros e capacitados
         </p>
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-2 sm:px-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- Curso 1 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2"
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover"
              data-aos="fade-up" data-aos-delay="100">
-          <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-r from-blue-800 to-seafoam flex items-center justify-center">
-            <svg class="h-16 sm:h-20 w-16 sm:w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-r from-blue-800 to-seafoam flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <svg class="h-20 w-20 text-white relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7l4-4m0 0l4 4m-4-4v18m-5-5h14a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+              <h3 class="text-xl font-bold">Arrais-Amador</h3>
+            </div>
           </div>
-          <div class="p-4 sm:p-6 md:p-8">
-            <h3 class="text-xl sm:text-2xl font-bold text-navy mb-2 sm:mb-4">Arrais-Amador</h3>
-            <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">apto para conduzir embarcações nos limites da navegação
-interior, cujas áreas são definida nas NPCP/NPCF, exceto moto aquática.</p>
-            <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-700">
+          <div class="p-6 sm:p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-navy">Arrais-Amador</h3>
+              <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Mais Procurado</span>
+            </div>
+            <p class="text-sm sm:text-base text-gray-600 mb-6">
+              Habilitação para conduzir embarcações nos limites da navegação interior, conforme definido nas NPCP/NPCF, exceto moto aquática.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-700 mb-6">
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Carga horária: 6 horas</span>
+                <span>Carga horária: 6 horas teóricas + práticas</span>
               </li>
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Validade: 10 anos</span>
               </li>
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Para embarcações de Esporte/Recreio</span>
               </li>
             </ul>
+            <a href="https://wa.me/5599999999999" target="_blank" 
+               class="btn-3d inline-flex items-center justify-center w-full bg-navy hover:bg-navyLight text-white font-semibold py-3 px-6 rounded-lg transition-all text-sm sm:text-base">
+              Saiba Mais
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
         
         <!-- Curso 2 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2"
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover"
              data-aos="fade-up" data-aos-delay="200">
-          <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-r from-blue-700 to-blue-400 flex items-center justify-center">
-            <svg class="h-16 sm:h-20 w-16 sm:w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-r from-blue-700 to-blue-400 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <svg class="h-20 w-20 text-white relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+              <h3 class="text-xl font-bold">Motonauta</h3>
+            </div>
           </div>
-          <div class="p-4 sm:p-6 md:p-8">
-            <h3 class="text-xl sm:text-2xl font-bold text-navy mb-2 sm:mb-4">Motonauta</h3>
-            <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">- apto para conduzir moto aquática nos limites da navegação interior,
-cujas áreas são definida nas NPCP/NPCF.</p>
-            <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-700">
+          <div class="p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-navy mb-4">Motonauta</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-6">
+              Habilitação específica para conduzir motos aquáticas nos limites da navegação interior, conforme definido nas NPCP/NPCF.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-700 mb-6">
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Carga horária: 3 horas</span>
+                <span>Carga horária: 3 horas teóricas + práticas</span>
               </li>
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Validade: 10 anos</span>
               </li>
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Para jet skis e motos aquáticas</span>
               </li>
             </ul>
+            <a href="https://wa.me/5599999999999" target="_blank" 
+               class="btn-3d inline-flex items-center justify-center w-full bg-navy hover:bg-navyLight text-white font-semibold py-3 px-6 rounded-lg transition-all text-sm sm:text-base">
+              Saiba Mais
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
         
         <!-- Curso 3 -->
-        <div class="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2"
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover"
              data-aos="fade-up" data-aos-delay="300">
-          <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-r from-navy to-blue-600 flex items-center justify-center">
-            <svg class="h-16 sm:h-20 w-16 sm:w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="h-48 sm:h-56 md:h-64 bg-gradient-to-r from-navy to-blue-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <svg class="h-20 w-20 text-white relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
             </svg>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+              <h3 class="text-xl font-bold">Mestre-Amador</h3>
+            </div>
           </div>
-          <div class="p-4 sm:p-6 md:p-8">
-            <h3 class="text-xl sm:text-2xl font-bold text-navy mb-2 sm:mb-4">Mestre-Amador</h3>
-            <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">Para quem deseja navegar em mar aberto e comandar embarcações maiores apto para conduzir embarcações entre portos nacionais e
-estrangeiros nos limites da navegação costeira (até 20 MN), exceto moto aquática.</p>
-            <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-700">
+          <div class="p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-navy mb-4">Mestre-Amador</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-6">
+              Para quem deseja navegar em mar aberto e comandar embarcações maiores entre portos nacionais e estrangeiros nos limites da navegação costeira (até 20 MN).
+            </p>
+            <ul class="space-y-3 text-sm text-gray-700 mb-6">
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>portos nacionais e
-estrangeiros</span>
+                <span>Navegação entre portos nacionais e estrangeiros</span>
               </li>
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Validade: 10 anos</span>
               </li>
               <li class="flex items-start">
-                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span> navegação costeira</span>
+                <span>Para navegação costeira (até 20 milhas náuticas)</span>
               </li>
             </ul>
+            <a href="https://wa.me/5599999999999" target="_blank" 
+               class="btn-3d inline-flex items-center justify-center w-full bg-navy hover:bg-navyLight text-white font-semibold py-3 px-6 rounded-lg transition-all text-sm sm:text-base">
+              Saiba Mais
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#servicos" class="inline-flex items-center text-navy font-semibold hover:text-gold transition-colors">
+          Conheça também nossos serviços de despachante
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Serviços de Despachante -->
-  <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-navy text-white">
+  <section id="servicos" class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-navy text-white">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-10 sm:mb-16 px-2" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mb-3 sm:mb-4">Serviços de Despachante Náutico</h2>
-        <p class="text-base sm:text-lg md:text-xl text-blue-200 mx-auto max-w-xs sm:max-w-md md:max-w-2xl">
-          Regularização completa para sua embarcação e documentação
+      <div class="text-center mb-12 sm:mb-16 px-2" data-aos="fade-up">
+        <div class="inline-block bg-white/10 text-white px-4 py-2 rounded-full mb-4">
+          <span class="text-sm font-semibold">NOSSOS SERVIÇOS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 leading-tight">
+          Serviços de <span class="text-gold">Despachante Náutico</span>
+        </h2>
+        <p class="text-lg sm:text-xl text-blue-200 mx-auto max-w-md md:max-w-2xl">
+          Regularização completa para sua embarcação e documentação com agilidade e segurança
         </p>
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-2 sm:px-0">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <!-- Serviço 1 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
              data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Registro de Embarcações</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Processamento completo do registro de sua embarcação junto à Marinha do Brasil.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Registro de Embarcações</h3>
+              <p class="text-sm text-blue-100">Processamento completo do registro de sua embarcação junto à Marinha do Brasil, incluindo todas as etapas burocráticas.</p>
             </div>
           </div>
         </div>
         
         <!-- Serviço 2 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
-             data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
+             data-aos="fade-up" data-aos-delay="150">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Transferência de Propriedade</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Regularização da transferência de propriedade de embarcações.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Transferência de Propriedade</h3>
+              <p class="text-sm text-blue-100">Regularização completa da transferência de propriedade de embarcações, garantindo toda a documentação necessária.</p>
             </div>
           </div>
         </div>
         
         <!-- Serviço 3 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
-             data-aos="fade-up" data-aos-delay="300">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
+             data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Renovação de Documento de Embarcação</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Renovação do Titulo de inscrição de embarcação (TIE) vencido ou próximo do vencimento.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Renovação de TIE</h3>
+              <p class="text-sm text-blue-100">Renovação do Título de Inscrição de Embarcação (TIE) vencido ou próximo do vencimento, sem complicações.</p>
             </div>
           </div>
         </div>
         
         <!-- Serviço 4 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
-             data-aos="fade-up" data-aos-delay="400">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
+             data-aos="fade-up" data-aos-delay="250">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Segunda Via de Documento de Embarcação</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Emissão de segunda via do TIE em caso de perda, roubo ou extravio.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Segunda Via de TIE</h3>
+              <p class="text-sm text-blue-100">Emissão de segunda via do TIE em caso de perda, roubo ou extravio, com todo o processo facilitado.</p>
             </div>
           </div>
         </div>
         
         <!-- Serviço 5 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
-             data-aos="fade-up" data-aos-delay="500">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
+             data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Renovação de Carteira de Arrais/Motonauta</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Renovação da sua Carteira de Habilitação de Amador vencida ou próxima do vencimento.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Renovação de Carteira</h3>
+              <p class="text-sm text-blue-100">Renovação da sua Carteira de Habilitação de Amador vencida ou próxima do vencimento, com orientação completa.</p>
             </div>
           </div>
         </div>
         
         <!-- Serviço 6 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
-             data-aos="fade-up" data-aos-delay="600">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
+             data-aos="fade-up" data-aos-delay="350">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Segunda Via de Carteira de Arrais/Motonauta</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Emissão de segunda via da carteira de habilitação em caso de perda ou dano.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Segunda Via de Carteira</h3>
+              <p class="text-sm text-blue-100">Emissão de segunda via da carteira de habilitação em caso de perda ou dano, com processo ágil e seguro.</p>
             </div>
           </div>
         </div>
         
         <!-- Serviço 7 -->
-        <div class="bg-white bg-opacity-10 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-800 hover:border-gold transition-colors"
-             data-aos="fade-up" data-aos-delay="700">
-          <div class="flex items-start sm:items-center">
-            <div class="bg-gold p-2 sm:p-3 rounded-lg mr-4 sm:mr-6 flex-shrink-0">
-              <svg class="h-6 w-6 sm:h-8 sm:w-8 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white bg-opacity-10 p-5 sm:p-6 rounded-xl border border-blue-800 hover:border-gold transition-all card-hover"
+             data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-start">
+            <div class="bg-gold p-3 rounded-lg mr-4 sm:mr-5 flex-shrink-0">
+              <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Averbação de Motonauta</h3>
-              <p class="text-xs sm:text-sm md:text-base text-blue-100">Inclusão da categoria de motonauta em sua carteira de habilitação.</p>
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Averbação de Motonauta</h3>
+              <p class="text-sm text-blue-100">Inclusão da categoria de motonauta em sua carteira de habilitação, com todo o processo documental.</p>
             </div>
           </div>
         </div>
+        
+       
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="https://wa.me/5599999999999" target="_blank" 
+           class="btn-3d inline-flex items-center justify-center bg-gold hover:bg-goldLight text-navy font-bold py-3 px-8 rounded-lg transition-all shadow-lg">
+          Solicitar Orçamento
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Galeria de Cursos em Ação -->
-  <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-white">
+ 
+
+  <!-- Galeria -->
+  <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-10 sm:mb-16 px-2" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-navy mb-3 sm:mb-4">Nossos Cursos em Ação</h2>
-        <p class="text-base sm:text-lg md:text-xl text-gray-600 mx-auto max-w-xs sm:max-w-md md:max-w-2xl">
-          Conheça nossa metodologia prática e infraestrutura
+      <div class="text-center mb-12 sm:mb-16 px-2" data-aos="fade-up">
+        <div class="inline-block bg-blue-50 text-navy px-4 py-2 rounded-full mb-4">
+          <span class="text-sm font-semibold">GALERIA</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-navy mb-4 leading-tight">
+          Nossos Cursos <span class="text-gold">em Ação</span>
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 mx-auto max-w-md md:max-w-2xl">
+          Conheça nossa metodologia prática e infraestrutura de qualidade
         </p>
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <!-- Foto 1 -->
-        <div class="relative group overflow-hidden rounded-lg sm:rounded-xl shadow-md sm:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative group overflow-hidden rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
           <img src="aula-pratica-1.jpg" alt="Aula prática de navegação" 
                class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition duration-500"
-               loading="lazy"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-               srcset="aula-pratica-1-small.jpg 400w, aula-pratica-1-medium.jpg 800w, aula-pratica-1-large.jpg 1200w">
+               loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent flex items-end p-4 sm:p-6">
             <div class="text-white">
-              <h3 class="text-sm sm:text-base md:text-lg font-bold">Aulas Práticas</h3>
-              <p class="text-xs sm:text-sm text-blue-100">Instrução personalizada em embarcações modernas</p>
+              <h3 class="text-lg font-bold">Aulas Práticas</h3>
+              <p class="text-sm text-blue-100">Instrução personalizada em embarcações modernas</p>
             </div>
           </div>
         </div>
         
         <!-- Foto 2 -->
-        <div class="relative group overflow-hidden rounded-lg sm:rounded-xl shadow-md sm:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative group overflow-hidden rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="150">
           <img src="aula-teorica.jpg" alt="Aula teórica" 
                class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition duration-500"
-               loading="lazy"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-               srcset="aula-teorica-small.jpg 400w, aula-teorica-medium.jpg 800w, aula-teorica-large.jpg 1200w">
+               loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent flex items-end p-4 sm:p-6">
             <div class="text-white">
-              <h3 class="text-sm sm:text-base md:text-lg font-bold">Aulas Teóricas</h3>
-              <p class="text-xs sm:text-sm text-blue-100">Salas equipadas com tecnologia de ensino</p>
+              <h3 class="text-lg font-bold">Aulas Teóricas</h3>
+              <p class="text-sm text-blue-100">Salas equipadas com tecnologia de ensino</p>
             </div>
           </div>
         </div>
         
         <!-- Foto 3 -->
+        <div class="relative group overflow-hidden rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+          <img src="embarcacoes.jpg" alt="Embarcações" 
+               class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition duration-500"
+               loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent flex items-end p-4 sm:p-6">
+            <div class="text-white">
+              <h3 class="text-lg font-bold">Embarcações</h3>
+              <p class="text-sm text-blue-100">Frota moderna e bem equipada</p>
+            </div>
+          </div>
+        </div>
         
+        <!-- Foto 4 -->
+        <div class="relative group overflow-hidden rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="250">
+          <img src="formatura.jpg" alt="Formatura" 
+               class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition duration-500"
+               loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent flex items-end p-4 sm:p-6">
+            <div class="text-white">
+              <h3 class="text-lg font-bold">Formatura</h3>
+              <p class="text-sm text-blue-100">Celebrando a conquista dos alunos</p>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <div class="text-center mt-8 sm:mt-12">
-        <a href="#" class="inline-block border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition-all text-sm sm:text-base">
+      <div class="text-center mt-10">
+        <a href="#" class="btn-3d inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold py-3 px-8 rounded-lg transition-all">
           Ver Mais Fotos
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          </svg>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Localização -->
-  <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-center text-navy mb-4 sm:mb-6">Nossa Localização</h2>
-      <p class="text-center text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-xs sm:max-w-md md:max-w-2xl mx-auto">
-        Estamos estrategicamente localizados para melhor atender nossos alunos e clientes.
-      </p>
+  <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
+    <div class="max-w-6xl mx-auto" data-aos="fade-up">
+      <div class="text-center mb-12 sm:mb-16 px-2">
+        <div class="inline-block bg-blue-50 text-navy px-4 py-2 rounded-full mb-4">
+          <span class="text-sm font-semibold">LOCALIZAÇÃO</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-navy mb-4 leading-tight">
+          Onde nos <span class="text-gold">encontrar</span>
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 mx-auto max-w-md md:max-w-2xl">
+          Estamos estrategicamente localizados para melhor atender nossos alunos e clientes
+        </p>
+      </div>
       
-      <div class="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8">
-        <div class="md:w-1/2">
-          <div class="border-2 sm:border-4 border-blue-200 rounded-lg sm:rounded-xl overflow-hidden shadow-lg h-full">
+      <div class="flex flex-col lg:flex-row gap-6 sm:gap-8">
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <div class="border-4 border-blue-100 rounded-xl overflow-hidden shadow-xl h-full">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.048270262457!2d-43.20937298454701!3d-22.905758685013925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997fe0d26da1fb%3A0x6f84c1f3fd361738!2sMarinha%20do%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1629999999999" 
-              width="100%" height="100%" allowfullscreen="" loading="lazy"
-              class="w-full h-64 sm:h-80 md:h-96 lg:h-[400px]">
+              width="100%" height="100%" style="min-height: 400px;" allowfullscreen="" loading="lazy"
+              class="w-full">
             </iframe>
           </div>
         </div>
         
-        <div class="md:w-1/2">
-          <div class="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-lg h-full">
-            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-navy mb-4 sm:mb-6">Informações de Contato</h3>
+        <div class="lg:w-1/2" data-aos="fade-left" data-aos-delay="200">
+          <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg h-full border border-gray-100">
+            <h3 class="text-2xl sm:text-3xl font-bold text-navy mb-6">Informações de Contato</h3>
             
-            <div class="space-y-4 sm:space-y-6">
-              <div class="flex items-start">
-                <div class="bg-blue-100 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
-                  <svg class="h-5 w-5 sm:h-6 sm:w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="space-y-5">
+              <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+                <div class="bg-blue-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                  <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-sm sm:text-base font-bold text-gray-800">Endereço</h4>
-                  <p class="text-xs sm:text-sm text-gray-600">Rua Exemplo, 1234 - Bairro</p>
-                  <p class="text-xs sm:text-sm text-gray-600">Presidente Epitácio - SP</p>
+                  <h4 class="text-base font-bold text-gray-800">Endereço</h4>
+                  <p class="text-sm text-gray-600">Rua Exemplo, 1234 - Bairro</p>
+                  <p class="text-sm text-gray-600">Presidente Epitácio - SP</p>
                 </div>
               </div>
               
-              <div class="flex items-start">
-                <div class="bg-blue-100 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
-                  <svg class="h-5 w-5 sm:h-6 sm:w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+                <div class="bg-blue-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                  <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-sm sm:text-base font-bold text-gray-800">Telefone</h4>
-                  <p class="text-xs sm:text-sm text-gray-600">(21) 9999-9999</p>
-                  <p class="text-xs sm:text-sm text-gray-600">Atendimento: Seg-Sex, 8h-18h</p>
+                  <h4 class="text-base font-bold text-gray-800">Telefone</h4>
+                  <p class="text-sm text-gray-600">(99) 9999-9999</p>
+                  <p class="text-sm text-gray-600">Atendimento: Seg-Sex, 8h-18h</p>
                 </div>
               </div>
               
-              <div class="flex items-start">
-                <div class="bg-blue-100 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
-                  <svg class="h-5 w-5 sm:h-6 sm:w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+                <div class="bg-blue-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                  <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-sm sm:text-base font-bold text-gray-800">Email</h4>
-                  <p class="text-xs sm:text-sm text-gray-600">gabrielcrescencio44@gmail.com</p>
+                  <h4 class="text-base font-bold text-gray-800">Email</h4>
+                  <p class="text-sm text-gray-600">gabrielcrescencio44@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start bg-blue-50/50 p-4 rounded-lg">
+                <div class="bg-blue-100 p-3 rounded-lg mr-4 flex-shrink-0">
+                  <svg class="h-6 w-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-base font-bold text-gray-800">Horário de Funcionamento</h4>
+                  <p class="text-sm text-gray-600">Segunda a Sexta: 8h às 18h</p>
+                  <p class="text-sm text-gray-600">Sábado: 8h às 12h</p>
                 </div>
               </div>
             </div>
             
-            <a href="https://www.google.com/maps/dir//Rua+Exemplo,+123,+Cidade,+UF" target="_blank" class="mt-6 sm:mt-8 inline-block bg-navy hover:bg-blue-800 text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition-all transform hover:scale-105 text-sm sm:text-base">
-              Ver rota no Google Maps
-            </a>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="https://www.google.com/maps/dir//Rua+Exemplo,+123,+Cidade,+UF" target="_blank" 
+                 class="btn-3d flex-1 inline-flex items-center justify-center bg-navy hover:bg-navyLight text-white font-semibold py-3 px-6 rounded-lg transition-all">
+                <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+                Ver Rota
+              </a>
+              <a href="https://wa.me/5599999999999" target="_blank" 
+                 class="btn-3d flex-1 inline-flex items-center justify-center bg-gold hover:bg-goldLight text-navy font-semibold py-3 px-6 rounded-lg transition-all">
+                <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Final -->
-  <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-r from-navy to-blue-800 text-white">
-    <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in" data-aos-duration="1000">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mb-4 sm:mb-6">Pronto para começar sua jornada náutica?</h2>
-      <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto">Entre em contato agora mesmo e dê o primeiro passo para obter sua habilitação ou regularizar sua documentação.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-        <a href="https://wa.me/5599999999999" class="bg-gold hover:bg-yellow-600 text-navy font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg inline-block text-sm sm:text-base">
-          Fale no WhatsApp
+  <!-- FAQ -->
+  <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 sm:mb-16 px-2" data-aos="fade-up">
+        <div class="inline-block bg-blue-50 text-navy px-4 py-2 rounded-full mb-4">
+          <span class="text-sm font-semibold">DÚVIDAS FREQUENTES</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-navy mb-4 leading-tight">
+          Perguntas <span class="text-gold">Frequentes</span>
+        </h2>
+        <p class="text-lg sm:text-xl text-gray-600 mx-auto max-w-md md:max-w-2xl">
+          Tire suas dúvidas sobre nossos cursos e serviços
+        </p>
+      </div>
+      
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+        <!-- Pergunta 1 -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex justify-between items-center p-5 sm:p-6 text-left">
+            <h3 class="text-lg sm:text-xl font-semibold text-navy">Qual a documentação necessária para fazer o curso de Arrais-Amador?</h3>
+            <svg class="h-5 w-5 text-gold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+            <p class="text-gray-600">
+              Você precisará apresentar: RG, CPF, comprovante de residência, atestado médico de saúde física e mental (com validade de 1 ano) e certificado de treinamento náutico.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Pergunta 2 -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex justify-between items-center p-5 sm:p-6 text-left">
+            <h3 class="text-lg sm:text-xl font-semibold text-navy">Quanto tempo demora para emitir a carteira de habilitação após o curso?</h3>
+            <svg class="h-5 w-5 text-gold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+            <p class="text-gray-600">
+              Após a aprovação no Exame de Habilitação, o processo de emissão da carteira de habilitação de Amador pela Marinha leva 10 dias úteis. Nós acompanhamos todo o processo e avisamos quando o documento estiver pronto no Gov.BR.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Pergunta 3 -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex justify-between items-center p-5 sm:p-6 text-left">
+            <h3 class="text-lg sm:text-xl font-semibold text-navy">Posso fazer o curso de Arrais-Amador e Motonauta juntos?</h3>
+            <svg class="h-5 w-5 text-gold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+            <p class="text-gray-600">
+              Sim, é possível e muitas vezes recomendado. Os cursos têm conteúdos complementares e quando feitos juntos, oferecemos descontos especiais. A única diferença é que para o Motonauta você fará aulas práticas específicas com moto aquática.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Pergunta 4 -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+          <button class="faq-toggle w-full flex justify-between items-center p-5 sm:p-6 text-left">
+            <h3 class="text-lg sm:text-xl font-semibold text-navy">Qual a validade da carteira de habilitação náutica?</h3>
+            <svg class="h-5 w-5 text-gold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+            <p class="text-gray-600">
+              A carteira de habilitação náutica (Arrais-Amador, Motonauta ou Mestre-Amador) tem validade de 10 anos. Após esse período, é necessário renovar o documento junto à Marinha.
+            </p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class="text-center mt-12">
+        <p class="text-lg text-gray-600 mb-6">Não encontrou resposta para sua dúvida?</p>
+        <a href="https://wa.me/5599999999999" target="_blank" 
+           class="btn-3d inline-flex items-center justify-center bg-gold hover:bg-goldLight text-navy font-bold py-3 px-8 rounded-lg transition-all shadow-lg">
+          Fale Conosco
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
         </a>
-        <a href="tel:+5521999999999" class="bg-white hover:bg-gray-100 text-navy font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg inline-block text-sm sm:text-base">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-gradient-to-r from-navy to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+      <div class="inline-block bg-white/10 px-4 py-2 rounded-full mb-4">
+        <span class="text-sm font-semibold">PRONTO PARA COMEÇAR?</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+        Transforme seu sonho náutico em realidade
+      </h2>
+      <p class="text-lg sm:text-xl mb-8 max-w-md md:max-w-2xl mx-auto">
+        Entre em contato agora mesmo e dê o primeiro passo para obter sua habilitação ou regularizar sua documentação.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/5599999999999" target="_blank" 
+           class="btn-3d inline-flex items-center justify-center bg-gold hover:bg-goldLight text-navy font-bold py-3 px-8 rounded-lg transition-all shadow-lg">
+          <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          WhatsApp
+        </a>
+        <a href="tel:+5599999999999" 
+           class="btn-3d inline-flex items-center justify-center bg-white hover:bg-gray-100 text-navy font-bold py-3 px-8 rounded-lg transition-all shadow-lg">
+          <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
           Ligar Agora
         </a>
       </div>
@@ -547,77 +908,92 @@ estrangeiros</span>
   </section>
 
   <!-- Rodapé -->
-  <footer class="bg-navy text-white py-8 sm:py-12 px-4 sm:px-6">
+  <footer class="bg-navyDark text-white py-12 sm:py-16 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
         <div class="text-center sm:text-left">
-          <img src="./gabriel-crescencio-logo.png" alt="Logo" class="mx-auto sm:mx-0 w-28 sm:w-32 md:w-40 h-auto mb-3 sm:mb-4">
-          <p class="text-xs sm:text-sm text-blue-200">Excelência em educação náutica.</p>
+          <img src="./logo-transparente2.png" alt="Logo" class="mx-auto sm:mx-0 w-32 md:w-40 h-auto mb-4">
+          <p class="text-sm text-blue-300 mb-4">Excelência em educação náutica e serviços de despachante credenciado.</p>
+          <div class="flex justify-center sm:justify-start space-x-4">
+            <a href="#" class="text-blue-300 hover:text-white transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#" class="text-blue-300 hover:text-white transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
         
         <div class="text-center sm:text-left">
-          <h4 class="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gold">Cursos</h4>
-          <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm text-blue-200">
+          <h4 class="text-base font-bold mb-4 text-gold">Cursos</h4>
+          <ul class="space-y-2 text-sm text-blue-300">
             <li><a href="#" class="hover:text-white transition">Arrais-Amador</a></li>
             <li><a href="#" class="hover:text-white transition">Motonauta</a></li>
             <li><a href="#" class="hover:text-white transition">Mestre-Amador</a></li>
+            <li><a href="#" class="hover:text-white transition">Reciclagem</a></li>
           </ul>
         </div>
         
         <div class="text-center sm:text-left">
-          <h4 class="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gold">Serviços</h4>
-          <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm text-blue-200">
+          <h4 class="text-base font-bold mb-4 text-gold">Serviços</h4>
+          <ul class="space-y-2 text-sm text-blue-300">
             <li><a href="#" class="hover:text-white transition">Registro de Embarcações</a></li>
-            <li><a href="#" class="hover:text-white transition">Transferência</a></li>
-            <li><a href="#" class="hover:text-white transition">Renovação de Carteiras</a></li>
+            <li><a href="#" class="hover:text-white transition">Transferência de Propriedade</a></li>
+            <li><a href="#" class="hover:text-white transition">Renovação de Documentos</a></li>
+            <li><a href="#" class="hover:text-white transition">Segunda Via de Carteiras</a></li>
           </ul>
         </div>
         
         <div class="text-center sm:text-left">
-          <h4 class="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gold">Contato</h4>
-          <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm text-blue-200">
+          <h4 class="text-base font-bold mb-4 text-gold">Contato</h4>
+          <ul class="space-y-2 text-sm text-blue-300">
             <li class="flex items-center justify-center sm:justify-start">
-              <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="h-4 w-4 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               (99) 9999-9999
             </li>
             <li class="flex items-center justify-center sm:justify-start">
-              <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="h-4 w-4 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               gabrielcrescencio44@gmail.com
             </li>
+            <li class="flex items-center justify-center sm:justify-start">
+              <svg class="h-4 w-4 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Presidente Epitácio - SP
+            </li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-blue-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
-        <p class="text-xs sm:text-sm text-blue-300">&copy; 2025 Gabriel Crescêncio Assessoria. Todos os direitos reservados.</p>
-        <div class="flex justify-center space-x-4 sm:space-x-6 mt-3 sm:mt-4">
-          <a href="#" class="text-blue-300 hover:text-white">
-            <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="#" class="text-blue-300 hover:text-white">
-            <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
-            </svg>
-          </a>
+      
+      <div class="border-t border-blue-900 mt-10 pt-8 text-center">
+        <p class="text-xs text-blue-400">&copy; 2025 Gabriel Crescêncio Assessoria. Todos os direitos reservados.</p>
+        <div class="mt-2">
+          <a href="#" class="text-xs text-blue-400 hover:text-white transition">Política de Privacidade</a>
+          <span class="mx-2 text-blue-400">•</span>
+          <a href="#" class="text-xs text-blue-400 hover:text-white transition">Termos de Serviço</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5599999999999" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110 group" target="_blank" aria-label="WhatsApp">
-    <div class="relative">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" viewBox="0 0 24 24" fill="currentColor">
+  <a href="https://wa.me/5599999999999" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110 group" target="_blank" aria-label="WhatsApp">
+    <div class="relative animate-pulse-slow">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.479 5.092 1.479 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
       </svg>
-      <span class="absolute -right-1 -top-1 sm:-right-2 sm:-top-2 bg-gold text-navy text-[0.6rem] sm:text-xs font-bold rounded-full h-4 w-4 sm:h-6 sm:w-6 flex items-center justify-center shadow-md">!</span>
+      <span class="absolute -right-2 -top-2 bg-gold text-navy text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center shadow-md">!</span>
     </div>
-    <span class="absolute right-12 sm:right-16 bg-gray-900 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+    <span class="absolute right-16 bg-gray-900 text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
       Fale conosco
     </span>
   </a>
@@ -625,6 +1001,7 @@ estrangeiros</span>
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // Inicializa AOS
     AOS.init({
       duration: 800,
       once: true,
@@ -634,6 +1011,42 @@ estrangeiros</span>
     // Re-inicializa AOS quando a janela é redimensionada
     window.addEventListener('resize', function() {
       AOS.refresh();
+    });
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        
+        // Alternar visibilidade do conteúdo
+        content.classList.toggle('hidden');
+        
+        // Rotacionar ícone
+        if (content.classList.contains('hidden')) {
+          icon.classList.remove('rotate-180');
+        } else {
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+    
+    // Smooth scroll para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
   </script>
 </body>
